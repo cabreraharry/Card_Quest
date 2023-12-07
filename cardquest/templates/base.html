@@ -1,6 +1,4 @@
 {% load static %}
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,8 +17,8 @@
     <section class="navbar">
       <a href="{% url 'home' %}" class="btn"> Home </a>
       <a href="{% url 'trainer-list' %}" class="btn"> Trainer </a>
-      <a href="pokemon-card.html" class="btn"> Pokemon Card </a>
-      <a href="collection.html" class="btn"> Collection </a>
+      <a href="{% url 'pokemon-cards' %}" class="btn"> Pokemon Card </a>
+      <a href="{% url 'collection' %}" class="btn"> Collection </a>
     </section>
 
     <!--CONTENT-->
