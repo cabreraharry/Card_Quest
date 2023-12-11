@@ -24,7 +24,9 @@
     <!--CONTENT-->
     <main>
       {% block content %}
-
+      <div class="image-container">
+        <img src="{% static '../static/img/PokemonHomePg.png' %}" alt="Your Image Alt Text">
+      </div>
       {% endblock %}
     </main>
       {% include 'includes/footer.html' %}

@@ -3,3 +3,7 @@
 # super admin:
 # username: cabreraharry
 # password: harry123
+
+# super admin2:
+# username: kjvmartinez
+# password: cardquest_test123

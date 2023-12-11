@@ -74,9 +74,10 @@ class Command (BaseCommand):
                             description= "An alien-like, bipedal Pokemon that has four forms. Each focused on a different stat." ,
                             weakness= "Dark" ,card_number= 186 ,release_date="2004-11-18", evolution_stage= "Basic" ,abilities= "Pressure")
     
-        card1.save() #<-- save card1 to PokemonCard table\
-        self.stdout.write(self.style.SUCCESS(
-            'Successfully created Pokemon cards.')) #<-- display success message
+        list = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13, card14, card15, card16, card17, card18, card19, card20]
+
+        for x in list:
+            x.save
 
     def create_trainers(self):
         trainer1 = Trainer(name="Ash", birthdate= "1987-05-22",location= "Pallet Town",email= "ash@pokemon.com") 
@@ -89,3 +90,9 @@ class Command (BaseCommand):
         trainer8 = Trainer(name="Aaron" ,birthdate= "2002-10-06" ,location= "Sinoh Region" ,email= "aaronelitefor@pokemon.com")
         trainer9 = Trainer(name="Ronald",birthdate= "2003-06-27",location= "Buncag Grounds",email= "ronaldpogi@pokemon.com")
         trainer10 = Trainer(name="Cedric" ,birthdate= "2004-06-02" ,location= "Bunkhose" ,email= "cedric@pokemon.com")
+
+
+        list = [trainer1, trainer2, trainer3, trainer4, trainer5, trainer6, trainer7, trainer8, trainer9, trainer10]
+
+        for y in list:
+            y.save
