@@ -8,9 +8,9 @@ class Command (BaseCommand):
 
     def handle (self, *args, **kwargs):
         self.create_pokemon_cards() # <-- where logic is implemented
-        # self.create_trainers ()
+        self.create_trainers()
 
-    def create_pokemon_cards (self):
+    def create_pokemon_cards(self):
         # Create Pokemon Card instances
         card1 = PokemonCard(name="Pikachu", rarity="Rare",hp=60, card_type="Electric", attack="Thunder Shock",
                     description="A mouse-like pokemon that can generate electricity.",
@@ -77,7 +77,7 @@ class Command (BaseCommand):
         list = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13, card14, card15, card16, card17, card18, card19, card20]
 
         for x in list:
-            x.save
+            x.save()
 
     def create_trainers(self):
         trainer1 = Trainer(name="Ash", birthdate= "1987-05-22",location= "Pallet Town",email= "ash@pokemon.com") 
@@ -95,4 +95,4 @@ class Command (BaseCommand):
         list = [trainer1, trainer2, trainer3, trainer4, trainer5, trainer6, trainer7, trainer8, trainer9, trainer10]
 
         for y in list:
-            y.save
+            y.save()
