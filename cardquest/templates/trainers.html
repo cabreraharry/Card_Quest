@@ -25,16 +25,32 @@
     <!--TRAINERS-->
     <main>
         {% block content %}
+        <a href="{% url 'trainer-add' %}" class="btn btn-outline-primary">Add New
+          Trainer</a><br>
+          
         <section class="trainers-container">
             <table class="styled-table">
-                <tbody>
+              <tbody>
                 <tr>
                     <th>Trainer Name</th>
                     <th>Birthdate</th>
                     <th>Location</th>
                     <th>Email</th>
+                    <th>Action</th>
                 </tr>
-                </tbody>
+                {% for object in object_list %}
+                <!--ASH-->
+                  <td>{{ object.birthdate }}</td>
+                  <td>{{ object.location }}</td>
+                  <td>{{ object.email}} </td>
+                  <td>
+                    <a href="trainer_list/{{ object.id }}" >Edit</a> |
+                    <a href="trainer_list/{{ object.id }}/delete" >Delete</a>
+                  </td>
+                  </tr>
+                  {% endfor %}
+                  <tr>
+              </tbody>
             </table>
         </section>
         {% endblock %}
