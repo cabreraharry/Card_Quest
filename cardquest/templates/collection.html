@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,30 +16,48 @@
   </head>
   <body>
     <!--NAVBAR-->
-    <section class="navbar">
+     <!--NAVBAR-->
+     <section class="navbar">
       <a href="{% url 'home' %}" class="btn"> Home </a>
       <a href="{% url 'trainer-list' %}" class="btn"> Trainer </a>
       <a href="{% url 'pokemon-cards' %}" class="btn"> Pokemon Card </a>
       <a href="{% url 'collection' %}" class="btn" id="active"> Collection </a>
     </section>
 
-    <!--COLLECTION-->
-    
-    <main>
     {% block content %}
+    <!--TRAINERS-->
+    <a href="{% url 'collection-add' %}" class="btn btn-outline-primary">Add New Collection</a><br>
+    <main>
     <section class="collection-container">
       <table class="styled-table">
         <tbody>
           <tr>
+            <th>Card</th>
             <th>Trainer</th>
-            <th>Pokemon Card</th>
-            <th>Collection Date</th>
+            <th>Collection date</th>
+            <th>Action</th>
           </tr>
+          {% for object in object_list %}
+            <td>{{ object.card }}</td>
+            <td>{{ object.trainer }}</td>
+            <td>{{ object.collection_date}} </td>
+            <td>
+            <a href="collection_list/{{ object.id }}" >Edit</a>
+            <a href="collection_list/{{ object.id }}/delete" >Delete</a>
+            </td>
+          </tr>
+          {% empty %}
+          <tr>
+          {% endfor %}
+          <div>
+            {% include 'includes/pagination.html' %}
+          </div>
+          
         </tbody>
       </table>
     </section>
-    {% endblock %}
   </main>
+  {% endblock %}
   {% include 'includes/footer.html' %}
   </body>
 </html>

@@ -10,7 +10,7 @@ class BaseModel(models.Model):
     class Meta:
         abstract = True
 
-class Trainer (BaseModel):
+class Trainer(BaseModel):
     name = models.CharField(max_length=100, null=True, blank=True)
     birthdate = models.DateField(null=True, blank=True)
     location = models.CharField(max_length=250, null=True, blank=True)
@@ -60,7 +60,10 @@ class PokemonCard(BaseModel):
         max_length=250, null=True, blank=True)
     abilities = models.CharField(max_length=250, null=True, blank=True)
 
-class Collection (BaseModel):
+    def __str__ (self):
+        return self.name
+
+class Collection(BaseModel):
     card = models.ForeignKey(
         PokemonCard, blank=True, null=True, on_delete=models.CASCADE)
     trainer = models.ForeignKey(

@@ -1,7 +1,7 @@
 #your_app/management/commands/create_initial_data.py
 
 from django.core.management.base import BaseCommand
-from cardquest.models import PokemonCard, Trainer
+from cardquest.models import PokemonCard, Trainer, Collection
 
 class Command (BaseCommand):
     help = 'Creates initial data for the application' #- description of the command
