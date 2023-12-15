@@ -71,7 +71,7 @@ class PokemonCardListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         pokemon_data = self.get_pokemon_data()
-        context['pokemon_types'] = pokemon_data
+        context['pokemon_data'] = pokemon_data
         return context
 
     def get_pokemon_data(self):
